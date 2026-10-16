@@ -1,5 +1,6 @@
 /build/
-/dist/
+/dist/*
+!/dist/JProfilerKeyBuilder-windows-x64.exe
 *.class
 *.log
 
