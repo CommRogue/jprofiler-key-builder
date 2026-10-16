@@ -1,0 +1,15 @@
+/build/
+/dist/
+*.class
+*.log
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Editor and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

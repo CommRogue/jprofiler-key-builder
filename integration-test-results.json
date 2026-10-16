@@ -1,0 +1,6 @@
+{
+  "generated_key": "E-J16-ERWEW#2053215-2026.11.01-10-k3yntfym7ggys#35b338",
+  "exit_code": 0,
+  "stdout": "shipped_validator_status=15\n",
+  "scope": "Isolated shipped Java validator; no native-agent acceptance or configuration write."
+}
