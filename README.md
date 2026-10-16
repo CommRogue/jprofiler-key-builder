@@ -1,10 +1,10 @@
-# JProfiler Evaluation Key Builder
+# JFucker
 
 A desktop application and CLI implementing the evaluation-key format recovered from JProfiler 16.2.1. It produces the native CRC32 body and Java checksum, with a single expiration slider in the desktop app and optional advanced settings in the CLI.
 
 ## Run on Windows
 
-Download [JProfilerKeyBuilder-windows-x64.exe](dist/JProfilerKeyBuilder-windows-x64.exe) from `dist` and double-click it. This single-file portable desktop app includes its own Windows x64 Java runtime. No Java installation or administrator access is required. It unpacks into a temporary folder on each launch and removes that folder after the app closes; allow a few seconds for startup.
+Download [JFucker-windows-x64.exe](dist/JFucker-windows-x64.exe) from `dist` and double-click it. This single-file portable desktop app includes its own Windows x64 Java runtime. No Java installation or administrator access is required. It unpacks into a temporary folder on each launch and removes that folder after the app closes; allow a few seconds for startup.
 
 Use the JAR below for command-line output. The portable EXE opens the desktop app.
 
@@ -13,18 +13,18 @@ Use the JAR below for command-line output. The portable EXE opens the desktop ap
 The Linux x86_64 archive includes its own Java runtime. Extract the complete folder and keep its contents together:
 
 ```bash
-tar -xzf JProfilerKeyBuilder-linux-x64.tar.gz
-./JProfilerKeyBuilder/bin/JProfilerKeyBuilder
+tar -xzf JFucker-linux-x64.tar.gz
+./JFucker/bin/JFucker
 ```
 
-The native executable is `JProfilerKeyBuilder/bin/JProfilerKeyBuilder`. It needs a graphical desktop for the GUI; the command-line mode also works without a display. Tested on this Linux x86_64 host. Other distributions require compatible glibc and standard desktop libraries.
+The native executable is `JFucker/bin/JFucker`. It needs a graphical desktop for the GUI; the command-line mode also works without a display. Tested on this Linux x86_64 host. Other distributions require compatible glibc and standard desktop libraries.
 
 ## Run on Windows or Linux with Java
 
-Use the small, portable `key-builder.jar` with Java 17 or newer:
+Use the small, portable `JFucker.jar` with Java 17 or newer:
 
 ```text
-java -jar key-builder.jar
+java -jar JFucker.jar
 ```
 
 The portable JAR is useful for the CLI or systems with Java already installed. Windows users can use the single-file EXE above for the desktop app.
@@ -40,9 +40,9 @@ The issuer and ID come from the supplied example; their vendor-side allocation s
 ## Command line
 
 ```bash
-./JProfilerKeyBuilder/bin/JProfilerKeyBuilder --generate
-./JProfilerKeyBuilder/bin/JProfilerKeyBuilder --generate --expires 2026-11-01
-./JProfilerKeyBuilder/bin/JProfilerKeyBuilder --help
+./JFucker/bin/JFucker --generate
+./JFucker/bin/JFucker --generate --expires 2026-11-01
+./JFucker/bin/JFucker --help
 ```
 
 Available options:
@@ -75,7 +75,7 @@ $env:JAVA_HOME = 'C:\path\to\jdk'
 .\build-windows.ps1
 ```
 
-The Windows script produces the single-file `dist/JProfilerKeyBuilder-windows-x64.exe`, plus an app-image folder with `JProfilerKeyBuilder.exe` and a ZIP containing its runtime. If NSIS is installed outside its default directory, set `MAKENSIS` to the full path to `makensis.exe`. Keep the entire app-image folder together when using the ZIP distribution.
+The Windows script produces the single-file `dist/JFucker-windows-x64.exe`, plus an app-image folder with `JFucker.exe` and a ZIP containing its runtime. If NSIS is installed outside its default directory, set `MAKENSIS` to the full path to `makensis.exe`. Keep the entire app-image folder together when using the ZIP distribution.
 
 To cross-build the single-file Windows EXE on Linux, install NSIS 3, supply a Windows x64 JRE 17+ (for example, [Eclipse Temurin](https://adoptium.net/temurin/releases/)), and run:
 

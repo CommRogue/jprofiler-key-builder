@@ -4,7 +4,7 @@
       "--help"
     ],
     "status": 0,
-    "stdout": "JProfiler Evaluation Key Builder 1.0\nNo arguments: open desktop app.\n--generate [--expires YYYY-MM-DD] [--version 16|17]\n           [--issuer ERWEW] [--id 2053215] [--days 10]\n--help: show this help.\nDefault expiration: today + 11 days; generated key is written to stdout.",
+    "stdout": "JFucker 1.0\nNo arguments: open desktop app.\n--generate [--expires YYYY-MM-DD] [--version 16|17]\n           [--issuer ERWEW] [--id 2053215] [--days 10]\n--help: show this help.\nDefault expiration: today + 11 days; generated key is written to stdout.",
     "stderr": ""
   },
   {

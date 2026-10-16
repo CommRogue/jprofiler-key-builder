@@ -20,11 +20,11 @@ builder_runtime="$(cd -- "$WINDOWS_JRE" && pwd)"
 rm -rf -- build/windows/classes build/windows/input
 mkdir -p build/windows/classes build/windows/input dist
 "$builder_jdk/bin/javac" --release 17 -d build/windows/classes src/KeyBuilder.java
-"$builder_jdk/bin/jar" --create --file build/windows/input/key-builder.jar \
+"$builder_jdk/bin/jar" --create --file build/windows/input/JFucker.jar \
     --main-class KeyBuilder -C build/windows/classes .
 "$builder_nsis" -V3 \
-    "-DAPP_JAR=$PWD/build/windows/input/key-builder.jar" \
+    "-DAPP_JAR=$PWD/build/windows/input/JFucker.jar" \
     "-DWINDOWS_JRE=$builder_runtime" \
-    "-DOUTPUT_EXE=$PWD/dist/JProfilerKeyBuilder-windows-x64.exe" \
+    "-DOUTPUT_EXE=$PWD/dist/JFucker-windows-x64.exe" \
     packaging/windows-portable.nsi
-echo "Created $PWD/dist/JProfilerKeyBuilder-windows-x64.exe"
+echo "Created $PWD/dist/JFucker-windows-x64.exe"

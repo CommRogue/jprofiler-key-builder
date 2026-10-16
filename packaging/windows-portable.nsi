@@ -1,7 +1,7 @@
 ; A single-file GUI launcher. NSIS extracts the private runtime to its unique
 ; temporary directory, waits for Java to exit, then removes the extracted files.
 Unicode true
-Name "JProfiler Key Builder"
+Name "JFucker"
 OutFile "${OUTPUT_EXE}"
 RequestExecutionLevel user
 SilentInstall silent
@@ -9,8 +9,8 @@ AutoCloseWindow true
 SetCompressor /SOLID lzma
 ManifestDPIAware true
 VIProductVersion "1.0.0.0"
-VIAddVersionKey /LANG=1033 "ProductName" "JProfiler Key Builder"
-VIAddVersionKey /LANG=1033 "FileDescription" "JProfiler Key Builder portable launcher"
+VIAddVersionKey /LANG=1033 "ProductName" "JFucker"
+VIAddVersionKey /LANG=1033 "FileDescription" "JFucker portable launcher"
 VIAddVersionKey /LANG=1033 "FileVersion" "1.0.0"
 VIAddVersionKey /LANG=1033 "LegalCopyright" ""
 
@@ -28,7 +28,7 @@ Section
     InitPluginsDir
     SetOutPath "$PLUGINSDIR"
     ClearErrors
-    File /oname=key-builder.jar "${APP_JAR}"
+    File /oname=JFucker.jar "${APP_JAR}"
     SetOutPath "$PLUGINSDIR\runtime"
     File /r "${WINDOWS_JRE}/*"
     IfErrors extraction_failed
@@ -36,7 +36,7 @@ Section
     ; Keep the working directory outside the temporary runtime so cleanup works.
     SetOutPath "$EXEDIR"
     ClearErrors
-    ExecWait '"$PLUGINSDIR\runtime\bin\javaw.exe" -jar "$PLUGINSDIR\key-builder.jar"' $0
+    ExecWait '"$PLUGINSDIR\runtime\bin\javaw.exe" -jar "$PLUGINSDIR\JFucker.jar"' $0
     IfErrors launch_failed
     SetErrorLevel $0
     Goto done

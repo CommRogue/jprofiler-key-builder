@@ -20,7 +20,7 @@ public final class KeyBuilder {
     static final Color MUTED = new Color(153, 173, 192);
     static final Color ACCENT = new Color(82, 214, 179);
     static final DateTimeFormatter KEY_DATE = DateTimeFormatter.ofPattern("uuuu.MM.dd");
-    final JFrame frame = new JFrame("JProfiler Evaluation Key Builder");
+    final JFrame frame = new JFrame("JFucker");
     final JSlider expiration = new JSlider(1, 60, 12);
     final JLabel duration = label("", 22, TEXT);
     final JLabel expiryDate = label("", 13, MUTED);
@@ -89,7 +89,7 @@ public final class KeyBuilder {
 
         JPanel heading = vertical();
         JLabel eyebrow = label("EVALUATION LICENSE", 12, ACCENT);
-        JLabel title = label("JProfiler Key Builder", 29, TEXT);
+        JLabel title = label("JFucker", 29, TEXT);
         title.setFont(title.getFont().deriveFont(Font.BOLD));
         heading.add(eyebrow);
         heading.add(Box.createVerticalStrut(8));
@@ -215,7 +215,7 @@ public final class KeyBuilder {
 
     void save() {
         JFileChooser chooser = new JFileChooser();
-        chooser.setSelectedFile(new java.io.File("jprofiler-evaluation-key.txt"));
+        chooser.setSelectedFile(new java.io.File("JFucker-key.txt"));
         if (chooser.showSaveDialog(frame) != JFileChooser.APPROVE_OPTION) return;
         java.io.File target = chooser.getSelectedFile();
         if (target.exists() && JOptionPane.showConfirmDialog(frame,
@@ -248,7 +248,7 @@ public final class KeyBuilder {
     }
 
     static void usage() {
-        System.out.println("JProfiler Evaluation Key Builder 1.0\n"
+        System.out.println("JFucker 1.0\n"
             + "No arguments: open desktop app.\n"
             + "--generate [--expires YYYY-MM-DD] [--version 16|17]\n"
             + "           [--issuer ERWEW] [--id 2053215] [--days 10]\n"

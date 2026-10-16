@@ -14,12 +14,12 @@ if [ ! -x "$builder_jdk/bin/jpackage" ]; then
 fi
 mkdir -p build/classes build/input dist
 "$builder_jdk/bin/javac" --release 17 -d build/classes src/KeyBuilder.java
-"$builder_jdk/bin/jar" --create --file build/input/key-builder.jar --main-class KeyBuilder -C build/classes .
-cp build/input/key-builder.jar dist/key-builder.jar
+"$builder_jdk/bin/jar" --create --file build/input/JFucker.jar --main-class KeyBuilder -C build/classes .
+cp build/input/JFucker.jar dist/JFucker.jar
 # This minimal build host has no objcopy, so retain runtime debug symbols.
-if [ -d dist/JProfilerKeyBuilder ]; then rm -rf -- dist/JProfilerKeyBuilder; fi
-"$builder_jdk/bin/jpackage" --type app-image --name JProfilerKeyBuilder --app-version 1.0 \
-    --description 'Evaluation key builder' --input build/input --main-jar key-builder.jar \
+if [ -d dist/JFucker ]; then rm -rf -- dist/JFucker; fi
+"$builder_jdk/bin/jpackage" --type app-image --name JFucker --app-version 1.0 \
+    --description 'Evaluation key builder' --input build/input --main-jar JFucker.jar \
     --main-class KeyBuilder --add-modules java.base,java.desktop \
     --jlink-options '--strip-native-commands --no-man-pages --no-header-files' --dest dist
-tar -czf dist/JProfilerKeyBuilder-linux-x64.tar.gz -C dist JProfilerKeyBuilder
+tar -czf dist/JFucker-linux-x64.tar.gz -C dist JFucker
