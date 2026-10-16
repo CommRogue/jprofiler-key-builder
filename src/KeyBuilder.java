@@ -21,7 +21,7 @@ public final class KeyBuilder {
     static final Color ACCENT = new Color(82, 214, 179);
     static final DateTimeFormatter KEY_DATE = DateTimeFormatter.ofPattern("uuuu.MM.dd");
     final JFrame frame = new JFrame("JFucker");
-    final JSlider expiration = new JSlider(1, 60, 12);
+    final JSlider expiration = new JSlider(1, 120, 60);
     final JLabel duration = label("", 22, TEXT);
     final JLabel expiryDate = label("", 13, MUTED);
     final JTextArea output = new JTextArea(3, 42);
@@ -116,8 +116,8 @@ public final class KeyBuilder {
         expiration.setPaintLabels(true);
         Hashtable<Integer, JLabel> marks = new Hashtable<>();
         marks.put(1, label("1 month", 12, MUTED));
-        marks.put(12, label("1 year", 12, MUTED));
         marks.put(60, label("5 years", 12, MUTED));
+        marks.put(120, label("10 years", 12, MUTED));
         expiration.setLabelTable(marks);
         expiration.getAccessibleContext().setAccessibleName("Time until expiration, in months");
         expiration.addChangeListener(event -> {

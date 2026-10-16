@@ -31,9 +31,9 @@ The portable JAR is useful for the CLI or systems with Java already installed. W
 
 ## Desktop controls
 
-Move the **Expires in** slider to choose one month to five years, in monthly steps. It starts at **1 year** and shows the resulting expiration date. Select **Generate key**, then **Copy key** or **Save to file**. Changing the slider clears the previous result.
+Move the **Expires in** slider to choose one month to ten years, in monthly steps. It starts at **5 years** and shows the resulting expiration date. Select **Generate key**, then **Copy key** or **Save to file**. Changing the slider clears the previous result.
 
-The desktop app handles the remaining details automatically: version 16, issuer `ERWEW`, record ID `2053215`, and a days field matching the selected duration. The one-year default uses the same calendar date next year, accounting for leap years. Expiration takes effect near the beginning of the displayed date.
+The desktop app handles the remaining details automatically: version 16, issuer `ERWEW`, record ID `2053215`, and a days field matching the selected duration. The five-year default uses the same calendar date five years from today, accounting for leap years. Expiration takes effect near the beginning of the displayed date.
 
 The issuer and ID come from the supplied example; their vendor-side allocation semantics remain unknown. Advanced values remain available through the CLI, whose existing defaults are unchanged.
 
@@ -93,7 +93,7 @@ Validation performed on 2026-10-16:
 
 - Reproduced the user-supplied vendor key byte for byte.
 - Tested malformed dates, leap years, unsupported versions, invalid issuer/ID fields, and invalid days values.
-- Exercised the one-year GUI default, both slider endpoints, mixed year/month labels, generated expiry and days fields, clearing stale output, and clipboard copying.
+- Exercised the five-year GUI default, both slider endpoints, mixed year/month labels, generated expiry and days fields, clearing stale output, and clipboard copying.
 - Opened and closed the packaged Linux desktop executable successfully, with exit 0 and no stderr.
 - Tested the packaged CLI, including error messages and exit codes.
 - Generated a code expiring 2026-11-01 and passed it to the unmodified installed JProfiler Java validator in an isolated JVM. It returned `15` whole days remaining.

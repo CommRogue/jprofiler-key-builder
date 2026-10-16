@@ -31,11 +31,13 @@ public class KeyBuilderTest {
             SwingUtilities.invokeAndWait(() -> {
                 app[0] = new KeyBuilder();
                 app[0].frame.setVisible(true);
-                require(app[0].expiration.getValue() == 12, "Default duration is not one year");
-                require(app[0].selectedExpiry().equals(LocalDate.now().plusYears(1)), "Default expiry is not one year away");
-                require(app[0].duration.getText().equals("1 year"), "Default duration label is incorrect");
+                require(app[0].expiration.getMinimum() == 1, "Minimum duration is not one month");
+                require(app[0].expiration.getMaximum() == 120, "Maximum duration is not ten years");
+                require(app[0].expiration.getValue() == 60, "Default duration is not five years");
+                require(app[0].selectedExpiry().equals(LocalDate.now().plusYears(5)), "Default expiry is not five years away");
+                require(app[0].duration.getText().equals("5 years"), "Default duration label is incorrect");
                 require(!app[0].copy.isEnabled() && !app[0].save.isEnabled(), "Empty output actions enabled");
-                for (int months : new int[]{12, 1, 60, 13}) {
+                for (int months : new int[]{60, 1, 120, 13}) {
                     app[0].expiration.setValue(months);
                     require(app[0].output.getText().isEmpty(), "Slider change left a stale key");
                     require(!app[0].copy.isEnabled() && !app[0].save.isEnabled(), "Slider change left actions enabled");
@@ -49,7 +51,7 @@ public class KeyBuilderTest {
                     require(app[0].copy.isEnabled() && app[0].save.isEnabled(), "Output actions disabled");
                 }
                 require(app[0].duration.getText().equals("1 year, 1 month"), "Mixed duration label is incorrect");
-                app[0].expiration.setValue(12);
+                app[0].expiration.setValue(60);
                 app[0].generate.doClick();
                 app[0].copy.doClick();
                 require(app[0].status.getText().equals("Key copied to clipboard."), "Copy action failed");
@@ -63,7 +65,7 @@ public class KeyBuilderTest {
                 app[0].frame.dispose();
             });
             ImageIO.write(preview[0], "png", Path.of("preview.png").toFile());
-            System.out.println("GUI default year, slider bounds, expiry generation, stale-output clearing, clipboard, and preview rendering passed.");
+            System.out.println("GUI five-year default, slider bounds, expiry generation, stale-output clearing, clipboard, and preview rendering passed.");
         }
     }
 }
