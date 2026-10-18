@@ -1,6 +1,7 @@
 /build/
 /dist/*
 !/dist/JFucker-windows-x64.exe
+!/dist/x.txt
 *.class
 *.log
 
